@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.qa-post-submit-message {
+  font-size: 0.75rem;
+  padding: 10px;
+}
+
+#qa-question-error {
+  color: red;
+}
+
+#qa-submit-question-btn {
+  height: 30px;
+  font-weight: bold;
+  background-color: #fff;
+}

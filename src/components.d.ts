@@ -46,6 +46,8 @@ export namespace Components {
          */
         "userId": string;
     }
+    interface QaQuestionForm {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -60,9 +62,16 @@ declare global {
         prototype: HTMLQAndAElement;
         new (): HTMLQAndAElement;
     };
+    interface HTMLQaQuestionFormElement extends Components.QaQuestionForm, HTMLStencilElement {
+    }
+    var HTMLQaQuestionFormElement: {
+        prototype: HTMLQaQuestionFormElement;
+        new (): HTMLQaQuestionFormElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "q-and-a": HTMLQAndAElement;
+        "qa-question-form": HTMLQaQuestionFormElement;
     }
 }
 declare namespace LocalJSX {
@@ -106,9 +115,12 @@ declare namespace LocalJSX {
          */
         "userId"?: string;
     }
+    interface QaQuestionForm {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "q-and-a": QAndA;
+        "qa-question-form": QaQuestionForm;
     }
 }
 export { LocalJSX as JSX };
@@ -117,6 +129,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "q-and-a": LocalJSX.QAndA & JSXBase.HTMLAttributes<HTMLQAndAElement>;
+            "qa-question-form": LocalJSX.QaQuestionForm & JSXBase.HTMLAttributes<HTMLQaQuestionFormElement>;
         }
     }
 }

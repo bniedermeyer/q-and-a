@@ -60,6 +60,10 @@ export class QAndA {
   }
 
   render() {
-    return <Host></Host>;
+    return (
+      <Host>
+        <qa-question-form></qa-question-form>
+      </Host>
+    );
   }
 }
