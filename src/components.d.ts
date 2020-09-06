@@ -6,23 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface QAndA {
         /**
-          * The endpoint that questions/upvotes will be posted to
+          * The endpoint that questions/upvotes will be posted to. Defaults to `/ask` if not defined
          */
         "askEndpoint": string;
         /**
@@ -30,11 +16,15 @@ export namespace Components {
          */
         "correlationId": string;
         /**
+          * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
+         */
+        "pollingInterval": number;
+        /**
           * Primary color. Used mainly for button borders. Defaults to #10915b
          */
         "primaryColor": string;
         /**
-          * The endpoint the list of questions will be retrieved from
+          * The endpoint the list of questions will be retrieved from. Defaults to `/questions` if not defined
          */
         "retrieveEndpoint": string;
         /**
@@ -50,12 +40,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLQAndAElement extends Components.QAndA, HTMLStencilElement {
     }
     var HTMLQAndAElement: {
@@ -69,29 +53,14 @@ declare global {
         new (): HTMLQaQuestionFormElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "q-and-a": HTMLQAndAElement;
         "qa-question-form": HTMLQaQuestionFormElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface QAndA {
         /**
-          * The endpoint that questions/upvotes will be posted to
+          * The endpoint that questions/upvotes will be posted to. Defaults to `/ask` if not defined
          */
         "askEndpoint"?: string;
         /**
@@ -99,11 +68,15 @@ declare namespace LocalJSX {
          */
         "correlationId"?: string;
         /**
+          * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
+         */
+        "pollingInterval"?: number;
+        /**
           * Primary color. Used mainly for button borders. Defaults to #10915b
          */
         "primaryColor"?: string;
         /**
-          * The endpoint the list of questions will be retrieved from
+          * The endpoint the list of questions will be retrieved from. Defaults to `/questions` if not defined
          */
         "retrieveEndpoint"?: string;
         /**
@@ -118,7 +91,6 @@ declare namespace LocalJSX {
     interface QaQuestionForm {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "q-and-a": QAndA;
         "qa-question-form": QaQuestionForm;
     }
@@ -127,7 +99,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "q-and-a": LocalJSX.QAndA & JSXBase.HTMLAttributes<HTMLQAndAElement>;
             "qa-question-form": LocalJSX.QaQuestionForm & JSXBase.HTMLAttributes<HTMLQaQuestionFormElement>;
         }

@@ -1,32 +1,10 @@
-import state from '../store';
-
-interface Question {
-  question: string;
-  userId?: string;
-  correlationId?: string;
-  count?: number;
-}
-
-export function format(first: string, middle: string, last: string): string {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
-
-export async function askQuestion(question: string): Promise<void> {
-  let request: Question = {
-    question,
-  };
-  if (state.userId) {
-    request.userId = state.userId;
-  }
-  if (state.correlationId) {
-    request.correlationId = state.correlationId;
-  }
-  const settings = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(request),
-  };
-  await fetch(state.askEndpoint, settings);
+/**
+ * Invokes the provided promise factory at a given interval. Useful for polling.
+ * @param promiseFactory A function that returns a promise
+ * @param interval The interval in which the promise factory whould be envoked
+ */
+export function continuousPromise(promiseFactory: () => Promise<any>, interval: number): void {
+  const execute = () => promiseFactory().finally(waitAndExecute);
+  const waitAndExecute = () => setTimeout(execute, interval);
+  execute();
 }

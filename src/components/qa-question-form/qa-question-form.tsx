@@ -1,5 +1,5 @@
 import { Component, State, h } from '@stencil/core';
-import { askQuestion } from '../../utils/utils';
+import { askQuestion } from '../../utils/data-fetching-utils';
 import state from '../../store';
 
 @Component({
@@ -40,6 +40,9 @@ export class QaQuestionForm {
     this.question = e.target.value;
     if (this.displayConfirmation) {
       this.displayConfirmation = false;
+    }
+    if (this.error) {
+      this.error = '';
     }
   }
 

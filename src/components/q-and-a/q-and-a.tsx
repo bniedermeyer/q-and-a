@@ -1,4 +1,7 @@
 import { Component, Prop, Watch, Host, h } from '@stencil/core';
+import { QuestionList } from '../QuestionList/QuestionList';
+import { fetchQuestions } from '../../utils/data-fetching-utils';
+import { continuousPromise } from '../../utils/utils';
 import state from '../../store';
 
 @Component({
@@ -8,11 +11,13 @@ import state from '../../store';
 })
 export class QAndA {
   /**
-   * The endpoint that questions/upvotes will be posted to
+   * The endpoint that questions/upvotes will be posted to.
+   * Defaults to `/ask` if not defined
    */
   @Prop() askEndpoint: string;
   /**
-   * The endpoint the list of questions will be retrieved from
+   * The endpoint the list of questions will be retrieved from.
+   * Defaults to `/questions` if not defined
    */
   @Prop() retrieveEndpoint: string;
   /**
@@ -31,6 +36,10 @@ export class QAndA {
    * Secondary color. Used for question and header text color. Defaults to  #112378
    */
   @Prop() secondaryColor: string;
+  /**
+   * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
+   */
+  @Prop() pollingInterval: number = 10000;
 
   connectedCallback() {
     if (this.askEndpoint) {
@@ -51,6 +60,7 @@ export class QAndA {
     if (this.secondaryColor) {
       state.secondaryColor = this.secondaryColor;
     }
+    continuousPromise(fetchQuestions, this.pollingInterval);
   }
 
   @Watch('correlationId')
@@ -63,6 +73,7 @@ export class QAndA {
     return (
       <Host>
         <qa-question-form></qa-question-form>
+        <QuestionList questions={state.questions}></QuestionList>
       </Host>
     );
   }
