@@ -1,5 +1,5 @@
 {
-  "name": "q-and-a",
+  "name": "@bniedermeyer/q-and-a",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -11,9 +11,13 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/q-and-a/q-and-a.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
+  "author": {
+    "name": "Brenden Niedermeyer",
+    "email": "contact@brenden.dev",
+    "url": "https://brenden.dev"
+  },
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
