@@ -7,7 +7,7 @@ const { state } = createStore({
   correlationId: '',
   primaryColor: '#10915b',
   secondaryColor: '#112378',
-  questions: [{ key: '1', question: 'This is question 1', count: 100 }],
+  questions: [],
 });
 
 export default state;
