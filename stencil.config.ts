@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'q-and-a',
+  buildEs5: 'prod',
   outputTargets: [
     {
       type: 'dist',
