@@ -1,6 +1,6 @@
 import { createStore } from '@stencil/store';
 
-const { state } = createStore({
+const { state, reset } = createStore({
   askEndpoint: '/ask',
   retrieveEndpoint: '/questions',
   userId: '',
@@ -9,5 +9,5 @@ const { state } = createStore({
   secondaryColor: '#112378',
   questions: [],
 });
-
+export const resetStore = () => reset();
 export default state;
