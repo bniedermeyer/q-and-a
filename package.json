@@ -1,7 +1,7 @@
 {
-  "name": "@bniedermeyer/q-and-a",
-  "version": "0.0.4",
-  "description": "Stencil Component Starter",
+  "name": "@cascadiajs/q-and-a",
+  "version": "0.0.1",
+  "description": "A web component to manage audience questions during a live streamed event",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -21,6 +21,18 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
+  "homepage": "https://cascadiajs.com/",
+  "author": {
+    "name": "Brenden Niedermeyer",
+    "email": "contact@brenden.dev"
+  },
+  "keywords": [
+    "web component",
+    "cascadia",
+    "question",
+    "answer",
+    "question and answer"
+  ],
   "dependencies": {
     "@stencil/core": "^2.0.1",
     "@stencil/store": "^1.3.0"
