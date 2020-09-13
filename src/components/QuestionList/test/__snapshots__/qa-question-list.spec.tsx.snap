@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+
+exports[`qa-question-list renders all of the questions 1`] = `
+Object {
+  "$attrs$": Object {
+    "id": "questions",
+    "style": Object {
+      "listStyle": "none",
+      "marginTop": "0",
+      "padding": "3px",
+      "paddingLeft": "0",
+    },
+  },
+  "$children$": Array [
+    Object {
+      "$attrs$": Object {
+        "class": "qa-question",
+        "key": "key1",
+        "style": Object {
+          "color": "#112378",
+          "fontSize": "0.75rem",
+          "margin": "5px",
+        },
+      },
+      "$children$": Array [
+        Object {
+          "$attrs$": Object {
+            "class": "qa-question-text",
+            "style": Object {
+              "fontWeight": "bold",
+              "margin": "3px",
+              "wordWrap": "break-word",
+            },
+          },
+          "$children$": Array [
+            Object {
+              "$attrs$": null,
+              "$children$": null,
+              "$elm$": null,
+              "$flags$": 0,
+              "$key$": null,
+              "$name$": null,
+              "$tag$": null,
+              "$text$": "What time is it?",
+            },
+          ],
+          "$elm$": null,
+          "$flags$": 0,
+          "$key$": null,
+          "$name$": null,
+          "$tag$": "p",
+          "$text$": null,
+        },
+        Object {
+          "$attrs$": Object {
+            "aria-label": "Also ask this question",
+            "class": "qa-inc-button",
+            "onClick": [Function],
+            "style": Object {
+              "backgroundColor": "transparent",
+              "border": "3px solid #10915b",
+              "fontWeight": "bold",
+              "marginRight": "5px",
+            },
+            "type": "button",
+          },
+          "$children$": Array [
+            Object {
+              "$attrs$": null,
+              "$children$": null,
+              "$elm$": null,
+              "$flags$": 0,
+              "$key$": null,
+              "$name$": null,
+              "$tag$": null,
+              "$text$": "+1",
+            },
+          ],
+          "$elm$": null,
+          "$flags$": 0,
+          "$key$": null,
+          "$name$": null,
+          "$tag$": "button",
+          "$text$": null,
+        },
+        Object {
+          "$attrs$": null,
+          "$children$": Array [
+            Object {
+              "$attrs$": null,
+              "$children$": null,
+              "$elm$": null,
+              "$flags$": 0,
+              "$key$": null,
+              "$name$": null,
+              "$tag$": null,
+              "$text$": "20",
+            },
+          ],
+          "$elm$": null,
+          "$flags$": 0,
+          "$key$": null,
+          "$name$": null,
+          "$tag$": "span",
+          "$text$": null,
+        },
+      ],
+      "$elm$": null,
+      "$flags$": 0,
+      "$key$": "key1",
+      "$name$": null,
+      "$tag$": "li",
+      "$text$": null,
+    },
+  ],
+  "$elm$": null,
+  "$flags$": 0,
+  "$key$": null,
+  "$name$": null,
+  "$tag$": "ul",
+  "$text$": null,
+}
+`;
+
+exports[`qa-question-list renders no questions when none are present 1`] = `null`;

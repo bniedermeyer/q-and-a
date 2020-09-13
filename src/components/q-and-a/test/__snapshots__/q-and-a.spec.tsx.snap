@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`q-and-a renders 1`] = `
+<q-and-a>
+  <mock:shadow-root>
+    <qa-question-form>
+      <mock:shadow-root>
+        <form id="qa-question-form">
+          <div>
+            <textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+          </div>
+          <button id="qa-submit-question-btn" type="submit" style="color: #10915b; border: 3px solid #10915b;">
+            Ask Question
+          </button>
+        </form>
+      </mock:shadow-root>
+    </qa-question-form>
+  </mock:shadow-root>
+</q-and-a>
+`;

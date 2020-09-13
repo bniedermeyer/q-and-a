@@ -1,18 +1,20 @@
-import { newSpecPage } from '@stencil/core/testing';
-import { QaQuestionList } from '../QuestionList';
+import {QuestionList} from '../QuestionList';
+
 
 describe('qa-question-list', () => {
-  it('renders', async () => {
-    const page = await newSpecPage({
-      components: [QaQuestionList],
-      html: `<qa-question-list></qa-question-list>`,
-    });
-    expect(page.root).toEqualHtml(`
-      <qa-question-list>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </qa-question-list>
-    `);
+  it('renders no questions when none are present', async () => {
+    const result = QuestionList({questions: []}, [], undefined);
+    expect(result).toMatchSnapshot();
   });
+
+  it('renders all of the questions', () => {
+    const questions = [{
+      key:'key1',
+      question: 'What time is it?',
+      count: 20
+    }];
+    
+    const result = QuestionList({questions}, [], undefined);
+    expect(result).toMatchSnapshot();
+  })
 });
