@@ -25,7 +25,7 @@ export class QAndA {
    */
   @Prop() userId: string;
   /**
-   * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url.
+   * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url. A good use case for this property is to track which talk is being given at a time. This way you can only display questions relevant to the current talk.
    */
   @Prop() correlationId: string;
   /**
