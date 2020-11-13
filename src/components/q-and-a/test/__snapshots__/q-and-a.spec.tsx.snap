@@ -18,3 +18,58 @@ exports[`q-and-a renders 1`] = `
   </mock:shadow-root>
 </q-and-a>
 `;
+
+exports[`q-and-a should set the state according to the properties supplied 1`] = `
+<q-and-a ask-endpoint="/test-endpoint" correlation-id="corr123" polling-interval="3000" primary-color="#585859" retrieve-endpoint="/test-retrieve" secondary-color="#72d373" user-id="abc123">
+  <mock:shadow-root>
+    <qa-question-form>
+      <mock:shadow-root>
+        <form id="qa-question-form">
+          <div>
+            <textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+          </div>
+          <button id="qa-submit-question-btn" type="submit" style="color: #585859; border: 3px solid #585859;">
+            Ask Question
+          </button>
+        </form>
+      </mock:shadow-root>
+    </qa-question-form>
+  </mock:shadow-root>
+</q-and-a>
+`;
+
+exports[`q-and-a should set the state according to the properties supplied 2`] = `
+Object {
+  "askEndpoint": "/test-endpoint",
+  "correlationId": "corr123",
+  "primaryColor": "#585859",
+  "questions": Array [],
+  "retrieveEndpoint": "/test-retrieve",
+  "secondaryColor": "#72d373",
+  "userId": "abc123",
+}
+`;
+
+exports[`q-and-a should update the correlation id if it changes 1`] = `
+Object {
+  "askEndpoint": "/ask",
+  "correlationId": "",
+  "primaryColor": "#10915b",
+  "questions": Array [],
+  "retrieveEndpoint": "/questions",
+  "secondaryColor": "#112378",
+  "userId": "",
+}
+`;
+
+exports[`q-and-a should update the correlation id if it changes 2`] = `
+Object {
+  "askEndpoint": "/ask",
+  "correlationId": "corr1234",
+  "primaryColor": "#10915b",
+  "questions": Array [],
+  "retrieveEndpoint": "/questions",
+  "secondaryColor": "#112378",
+  "userId": "",
+}
+`;
