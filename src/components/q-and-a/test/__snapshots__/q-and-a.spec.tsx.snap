@@ -6,8 +6,7 @@ exports[`q-and-a renders 1`] = `
     <qa-question-form>
       <mock:shadow-root>
         <form id="qa-question-form">
-          <div>
-            <textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
           </div>
           <button id="qa-submit-question-btn" type="submit" style="color: #10915b; border: 3px solid #10915b;">
             Ask Question
@@ -25,8 +24,7 @@ exports[`q-and-a should set the state according to the properties supplied 1`] =
     <qa-question-form>
       <mock:shadow-root>
         <form id="qa-question-form">
-          <div>
-            <textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
           </div>
           <button id="qa-submit-question-btn" type="submit" style="color: #585859; border: 3px solid #585859;">
             Ask Question
