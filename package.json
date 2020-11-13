@@ -16,10 +16,10 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "commit": "cz",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test",
-    "test:unit": "stencil test --spec",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil test --spec",
+    "test:watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "homepage": "https://cascadiajs.com/",
@@ -48,6 +48,8 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0",
     "semantic-release": "^17.2.2"
   },
   "config": {
@@ -57,7 +59,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }
