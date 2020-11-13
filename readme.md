@@ -58,7 +58,7 @@ npm run build
 To run the unit tests for the components, run:
 
 ```bash
-npm test:unit
+npm test
 ```
 
 Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
