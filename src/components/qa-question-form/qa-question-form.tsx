@@ -25,6 +25,7 @@ export class QaQuestionForm {
     e.preventDefault();
     if (!this.question) {
       this.error = 'Please type a question before submitting!';
+      this.displayConfirmation = false;
       return;
     }
     try {
@@ -36,43 +37,35 @@ export class QaQuestionForm {
     this.question = '';
   }
 
-  handleQuestionChange(e): void {
+  private handleQuestionChange = e => {
     this.question = e.target.value;
     if (this.displayConfirmation) {
       this.displayConfirmation = false;
     }
     if (this.error) {
-      this.error = '';
+      this.error = undefined;
     }
-  }
+  };
 
   render() {
     return (
       <form id="qa-question-form" onSubmit={e => this.handleSubmit(e)}>
         <div>
-          <textarea
-            name="question"
-            id="question"
-            cols={30}
-            rows={3}
-            value={this.question}
-            onChange={e => this.handleQuestionChange(e)}
-            aria-label="Submit your question here"
-          ></textarea>
+          <textarea name="question" id="question" cols={30} rows={3} value={this.question} onChange={this.handleQuestionChange} aria-label="Submit your question here"></textarea>
         </div>
         <button type="submit" id="qa-submit-question-btn" style={{ color: state.primaryColor, border: `3px solid ${state.primaryColor}` }}>
           Ask Question
         </button>
-        {this.displayConfirmation && (
+        {this.displayConfirmation ? (
           <span class="qa-post-submit-message" id="qa-question-confirm" style={{ color: state.secondaryColor }}>
             Question Asked!
           </span>
-        )}
-        {this.error && (
+        ) : null}
+        {this.error ? (
           <span class="qa-post-submit-message" id="qa-question-error">
             {this.error}
           </span>
-        )}
+        ) : null}
       </form>
     );
   }
