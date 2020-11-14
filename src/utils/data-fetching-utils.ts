@@ -1,5 +1,10 @@
-import { Question } from '../models/Question';
+import { AskedQuestion, Question } from '../models/Question';
 import state from '../store';
+
+interface IncrementRequest {
+  key: string;
+  userId?: string;
+}
 
 /**
  * Posts the question asked by the user to the backend.
@@ -32,7 +37,7 @@ export async function askQuestion(question: string): Promise<void> {
  * @param key The unique id key of the question to increment
  */
 export async function incrementQuestionCount(key: string): Promise<void> {
-  const request: Question = {
+  const request: IncrementRequest = {
     key,
   };
   if (state.userId) {
@@ -56,6 +61,6 @@ export async function incrementQuestionCount(key: string): Promise<void> {
 export async function fetchQuestions(): Promise<void> {
   const url = state.correlationId ? `${state.retrieveEndpoint}?correlationId=${state.correlationId}` : state.retrieveEndpoint;
   let data = await fetch(url);
-  let questions = await data.json();
+  let questions: AskedQuestion[] = await data.json();
   state.questions = questions;
 }

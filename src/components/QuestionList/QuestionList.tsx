@@ -1,10 +1,10 @@
 import { FunctionalComponent, h } from '@stencil/core';
-import { Question } from '../../models/Question';
+import { AskedQuestion } from '../../models/Question';
 import { incrementQuestionCount } from '../../utils/data-fetching-utils';
 import state from '../../store';
 
 interface QuestionListProps {
-  questions: Question[];
+  questions: AskedQuestion[];
 }
 
 /**

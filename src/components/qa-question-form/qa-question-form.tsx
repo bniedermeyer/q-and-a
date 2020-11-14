@@ -21,7 +21,7 @@ export class QaQuestionForm {
    */
   @State() error: string;
 
-  async handleSubmit(e: Event) {
+  async handleSubmit(e: Event): Promise<void> {
     e.preventDefault();
     if (!this.question) {
       this.error = 'Please type a question before submitting!';
@@ -36,7 +36,7 @@ export class QaQuestionForm {
     this.question = '';
   }
 
-  handleQuestionChange(e) {
+  handleQuestionChange(e): void {
     this.question = e.target.value;
     if (this.displayConfirmation) {
       this.displayConfirmation = false;

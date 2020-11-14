@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`askQuestion should post the question to the backend 1`] = `
+Array [
+  Array [
+    "/ask",
+    Object {
+      "body": "{\\"question\\":\\"What is the airspeed velocity of an unladen swallow?\\"}",
+      "headers": Object {
+        "Content-Type": "application/json",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`askQuestion should post the question to the backend with the expected metadata 1`] = `
+Array [
+  Array [
+    "/ask",
+    Object {
+      "body": "{\\"question\\":\\"What is the airspeed velocity of an unladen swallow?\\",\\"userId\\":\\"my-user-id\\",\\"correlationId\\":\\"my-correlation-id\\"}",
+      "headers": Object {
+        "Content-Type": "application/json",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`fetchQuestions should fetch the questions and set them in the state 1`] = `
+Array [
+  Object {
+    "count": 2,
+    "key": "1",
+    "question": "What time is it?",
+    "userId": "user1",
+  },
+  Object {
+    "count": 0,
+    "key": "2",
+    "question": "What is for lunch?",
+    "userId": "1",
+  },
+]
+`;
+
+exports[`fetchQuestions should fetch the questions and set them in the state 2`] = `
+Array [
+  Array [
+    "/questions",
+  ],
+]
+`;
+
+exports[`fetchQuestions should fetch the questions for the given correlation id and set them in the state 1`] = `
+Array [
+  Object {
+    "correlationId": "a123",
+    "count": 2,
+    "key": "1",
+    "question": "What time is it?",
+    "userId": "user1",
+  },
+  Object {
+    "correlationId": "a123",
+    "count": 0,
+    "key": "2",
+    "question": "What is for lunch?",
+    "userId": "1",
+  },
+]
+`;
+
+exports[`fetchQuestions should fetch the questions for the given correlation id and set them in the state 2`] = `
+Array [
+  Array [
+    "/questions?correlationId=a123",
+  ],
+]
+`;
+
+exports[`incrementQuestionCount should post the increment request to the backend 1`] = `
+Array [
+  Array [
+    "/ask",
+    Object {
+      "body": "{\\"key\\":\\"question-key\\"}",
+      "headers": Object {
+        "Content-Type": "application/json",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`incrementQuestionCount should post the increment request to the backend with the expected metadata 1`] = `
+Array [
+  Array [
+    "/ask",
+    Object {
+      "body": "{\\"key\\":\\"question-key\\",\\"userId\\":\\"my-user-id\\"}",
+      "headers": Object {
+        "Content-Type": "application/json",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;

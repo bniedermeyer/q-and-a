@@ -66,6 +66,7 @@ export class QAndA {
   @Watch('correlationId')
   updateCorrelationId(newId: string, oldId: string) {
     console.log(`Q&A Correlation ID was updated from ${oldId} to ${newId}`);
+    // the store takes care of comparing new state values to prevent unnecessary rendering.
     state.correlationId = newId;
   }
 
