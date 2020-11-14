@@ -1,6 +1,6 @@
 {
   branches: [
-    'main'
+    'main',
     {name: 'next', channel: 'next', prerelease: 'beta'},
     '+([0-9])?(.{+([0-9]),x}).x'
   ],
