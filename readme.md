@@ -7,9 +7,13 @@
 
 # Q&A Component
 
-A web component to manage audience questions during a live streamed event.
+A web component to manage audience questions during a live streamed event. Originally used at CascadiaJS 2020.
 
-## Using the component
+<p align="center" >
+  <img src="component-example.png" alt="A screenshot of the component in use."  />
+</p>
+
+## Getting Started
 
 To use the component in one of your projects, include a `script` tag in the `<head>` of your `index.html` file.
 
@@ -32,7 +36,74 @@ Then you can use the element anywhere in your template, JSX, html etc.
 <q-and-a user-id="my-user" correlation-id="my-id"></q-and-a>
 ```
 
-Please see the documentation regarding the individual options for the component [here](src/components/q-and-a/readme.md).
+## Using the Component
+
+Please see the documentation regarding how to configure the component [here](src/components/q-and-a/readme.md).
+
+The component does a great job submitting and fetching questions from the audience at a configurable interval, but it is up to you to implement the logic in the backend so all users are seeing the same content during your session. For an example project implementation of a backend using [Begin](begin.com), please see [this repo](https://github.com/bniedermeyer/q-and-a-demo).
+
+### Submitting a question
+
+When a user submits a question, the component will post the following object to the configured endpoint.
+
+```json
+{
+  /**
+   * The question the user asked
+   */
+  "question": "What skills do I need to focus on to be a good mentor?",
+  /**
+   * Optional user identifier, if configured for the component
+   */
+  "userId": "user-1",
+  /**
+   * Optional correlation id, if configured for the component
+   */
+  "correlationId": "keynote-talk"
+}
+```
+
+### Fetching questions that have been asked
+
+The component will fetch a list of questions asked from the backend at a configurable interval of time. These questions can look like the question above, but should also include two additional manditory fields.
+
+```json
+[
+  {
+    /**
+     * The question the user asked. Must be present on all questions retrieved from the server.
+     */
+    "question": "What kind of problem is your favorite to solve?",
+    /**
+     * Unique question identifier. Must be present on all questions retrieved from the server.
+     */
+    "key": "question2",
+    /**
+     * Count of times the question has been asked and upvoted by the other users. Must be present on all questions retrieved from the server
+     */
+    "count": "4",
+    /**
+     * Optional user identifier, if configured for the component
+     */
+    "userId": "user-4",
+    /**
+     * Optional correlation id, if configured for the component
+     */
+    "correlationId": "keynote-talk"
+  }
+]
+```
+
+### Incrementing a questions count
+
+When a user clicks on a `+1` button for a question, they are saying "I also want to know the answer to this question". These +1s are posted to the backend with the following shape. The `userId` is an optional field that will be sent if it is configured for the component. This way you can prevent users from spamming the +1s on a question, or see who all voted for the question.
+
+```json
+{
+  "key": "question1",
+  "userId": "user-4"
+}
+```
 
 ## Development
 

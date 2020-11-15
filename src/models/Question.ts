@@ -17,9 +17,9 @@ export interface AskedQuestion extends Question {
   /**
    * Count of times the question has been asked. Must be present on all questions retrieved from the server
    */
-  count?: number;
+  count: number;
   /**
    * Unique question identifier. Must be present on all questions retrieved from the server.
    */
-  key?: string;
+  key: string;
 }
