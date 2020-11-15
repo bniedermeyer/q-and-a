@@ -94,7 +94,7 @@ The component will fetch a list of questions asked from the backend at a configu
 ];
 ```
 
-### Incrementing a questions count
+### Incrementing a question's count
 
 When a user clicks on a `+1` button for a question, they are saying "I also want to know the answer to this question". These +1s are posted to the backend with the following shape. The `userId` is an optional field that will be sent if it is configured for the component. This way you can prevent users from spamming the +1s on a question, or see who all voted for the question.
 
