@@ -67,7 +67,7 @@ When a user submits a question, the component will post the following object to 
 
 The component will fetch a list of questions asked from the backend at a configurable interval of time. These questions can look like the question above, but should also include two additional manditory fields.
 
-````js
+```js
 [
   {
     /**
