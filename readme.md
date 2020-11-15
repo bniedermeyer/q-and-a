@@ -46,7 +46,7 @@ The component does a great job submitting and fetching questions from the audien
 
 When a user submits a question, the component will post the following object to the configured endpoint.
 
-```json
+```js
 {
   /**
    * The question the user asked
@@ -67,7 +67,7 @@ When a user submits a question, the component will post the following object to 
 
 The component will fetch a list of questions asked from the backend at a configurable interval of time. These questions can look like the question above, but should also include two additional manditory fields.
 
-```json
+```js
 [
   {
     /**
@@ -90,20 +90,20 @@ The component will fetch a list of questions asked from the backend at a configu
      * Optional correlation id, if configured for the component
      */
     "correlationId": "keynote-talk"
-  }
-]
+  },
+];
 ```
 
 ### Incrementing a questions count
 
 When a user clicks on a `+1` button for a question, they are saying "I also want to know the answer to this question". These +1s are posted to the backend with the following shape. The `userId` is an optional field that will be sent if it is configured for the component. This way you can prevent users from spamming the +1s on a question, or see who all voted for the question.
 
-```json
+```js
 {
   "key": "question1",
   "userId": "user-4"
 }
-```
+````
 
 ## Development
 
