@@ -51,7 +51,7 @@ export async function incrementQuestionCount(key: string): Promise<void> {
     },
     body: JSON.stringify(request),
   };
-  await fetch(state.askEndpoint, settings);
+  await fetch(state.incrementEndpoint, settings);
 }
 
 /**

@@ -3,6 +3,7 @@ import { createStore } from '@stencil/store';
 const { state, reset, dispose } = createStore({
   askEndpoint: '/ask',
   retrieveEndpoint: '/questions',
+  incrementEndpoint: '/ask',
   userId: '',
   correlationId: '',
   primaryColor: '#10915b',
