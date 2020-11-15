@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/bniedermeyer/q-and-a/compare/v1.0.0...v1.1.0) (2020-11-15)
+
+
+### Features
+
+* make increment endpoint configurable ([#8](https://github.com/bniedermeyer/q-and-a/issues/8)) ([701354b](https://github.com/bniedermeyer/q-and-a/commit/701354b8f003facbcaa5554bb393f7403d054f80)), closes [#7](https://github.com/bniedermeyer/q-and-a/issues/7)
+
 # 1.0.0 (2020-11-14)
 
 
