@@ -8,7 +8,7 @@ exports[`q-and-a renders 1`] = `
         <form id="qa-question-form">
           <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
           </div>
-          <button id="qa-submit-question-btn" type="submit" style="color: #10915b; border: 3px solid #10915b;">
+          <button id="qa-submit-question-btn" type="submit" style="color: #007745 ; border: 3px solid #007745 ;">
             Ask Question
           </button>
         </form>
@@ -54,7 +54,7 @@ Object {
   "askEndpoint": "/ask",
   "correlationId": "",
   "incrementEndpoint": "/ask",
-  "primaryColor": "#10915b",
+  "primaryColor": "#007745 ",
   "questions": Array [],
   "retrieveEndpoint": "/questions",
   "secondaryColor": "#112378",
@@ -67,7 +67,7 @@ Object {
   "askEndpoint": "/ask",
   "correlationId": "corr1234",
   "incrementEndpoint": "/ask",
-  "primaryColor": "#10915b",
+  "primaryColor": "#007745 ",
   "questions": Array [],
   "retrieveEndpoint": "/questions",
   "secondaryColor": "#112378",

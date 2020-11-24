@@ -8,31 +8,35 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface QAndA {
     /**
-     * The endpoint that questions/upvotes will be posted to. Defaults to `/ask` if not defined
+     * The endpoint that questions/upvotes will be posted to.
      */
     askEndpoint: string;
     /**
-     * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url. A good use case for this property is to track which talk is being given at a time. This way you can only display questions relevant to the current talk.
+     * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url. Changes to this property are tracked and updated within the component. A good use case for this property is to track which talk is being given at a time. This way you can only display questions relevant to the current talk.
      */
     correlationId: string;
+    /**
+     * The endpoint to post increment commands to.
+     */
+    incrementEndpoint: string;
     /**
      * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
      */
     pollingInterval: number;
     /**
-     * Primary color. Used mainly for button borders. Defaults to #10915b
+     * Primary color. Used mainly for button borders.
      */
     primaryColor: string;
     /**
-     * The endpoint the list of questions will be retrieved from. Defaults to `/questions` if not defined
+     * The endpoint the list of questions will be retrieved from.
      */
     retrieveEndpoint: string;
     /**
-     * Secondary color. Used for question and header text color. Defaults to  #112378
+     * Secondary color. Used for question and header text color.
      */
     secondaryColor: string;
     /**
-     * The optional id of the user asking a question. Will be sent with the question if present.
+     * The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.
      */
     userId: string;
   }
@@ -57,31 +61,35 @@ declare global {
 declare namespace LocalJSX {
   interface QAndA {
     /**
-     * The endpoint that questions/upvotes will be posted to. Defaults to `/ask` if not defined
+     * The endpoint that questions/upvotes will be posted to.
      */
     askEndpoint?: string;
     /**
-     * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url. A good use case for this property is to track which talk is being given at a time. This way you can only display questions relevant to the current talk.
+     * The correlation id of the q-and-a session. If present, will be sent with questions and used to retrieve questions by appending a `correlationId` query parameter to the `retrieveEndpoint` url. Changes to this property are tracked and updated within the component. A good use case for this property is to track which talk is being given at a time. This way you can only display questions relevant to the current talk.
      */
     correlationId?: string;
+    /**
+     * The endpoint to post increment commands to.
+     */
+    incrementEndpoint?: string;
     /**
      * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
      */
     pollingInterval?: number;
     /**
-     * Primary color. Used mainly for button borders. Defaults to #10915b
+     * Primary color. Used mainly for button borders.
      */
     primaryColor?: string;
     /**
-     * The endpoint the list of questions will be retrieved from. Defaults to `/questions` if not defined
+     * The endpoint the list of questions will be retrieved from.
      */
     retrieveEndpoint?: string;
     /**
-     * Secondary color. Used for question and header text color. Defaults to  #112378
+     * Secondary color. Used for question and header text color.
      */
     secondaryColor?: string;
     /**
-     * The optional id of the user asking a question. Will be sent with the question if present.
+     * The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.
      */
     userId?: string;
   }
