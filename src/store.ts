@@ -1,13 +1,20 @@
 import { createStore } from '@stencil/store';
 
+// use these questions in the store below to create some default examples to see during development.
+/* const questions = [
+  { question: 'What time is lunch?', count: 3, key: '1' },
+  { question: 'What is your favorite color?', count: 1, key: '2' },
+  { question: 'What is your favorite band?', count: 2, key: '3' },
+]; */
+
 const { state, reset, dispose } = createStore({
-  askEndpoint: '/ask',
-  retrieveEndpoint: '/questions',
-  incrementEndpoint: '/ask',
+  askEndpoint: '',
+  retrieveEndpoint: '',
+  incrementEndpoint: '',
   userId: '',
   correlationId: '',
-  primaryColor: '#10915b',
-  secondaryColor: '#112378',
+  primaryColor: '',
+  secondaryColor: '',
   questions: [],
 });
 /** Used to reset the store to its original shape */

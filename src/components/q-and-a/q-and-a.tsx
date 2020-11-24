@@ -12,18 +12,16 @@ import state from '../../store';
 export class QAndA {
   /**
    * The endpoint that questions/upvotes will be posted to.
-   * Defaults to `/ask` if not defined.
    */
-  @Prop() askEndpoint: string;
+  @Prop() askEndpoint: string = '/ask';
   /**
    * The endpoint the list of questions will be retrieved from.
-   * Defaults to `/questions` if not defined.
    */
-  @Prop() retrieveEndpoint: string;
+  @Prop() retrieveEndpoint: string = '/questions';
   /**
-   * The endpoint to post increment commands to. Defaults to `/ask` if not defined.
+   * The endpoint to post increment commands to.
    */
-  @Prop() incrementEndpoint: string;
+  @Prop() incrementEndpoint: string = '/ask';
   /**
    * The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.
    */
@@ -33,13 +31,13 @@ export class QAndA {
    */
   @Prop() correlationId: string;
   /**
-   * Primary color. Used mainly for button borders. Defaults to #10915b
+   * Primary color. Used mainly for button borders.
    */
-  @Prop() primaryColor: string;
+  @Prop() primaryColor: string = '#007745 ';
   /**
-   * Secondary color. Used for question and header text color. Defaults to  #112378
+   * Secondary color. Used for question and header text color.
    */
-  @Prop() secondaryColor: string;
+  @Prop() secondaryColor: string = '#112378';
   /**
    * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
    */
