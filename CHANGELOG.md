@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/bniedermeyer/q-and-a/compare/v1.1.1...v1.1.2) (2020-11-24)
+
+
+### Bug Fixes
+
+* improve a11y and move defaults from store into component props ([#10](https://github.com/bniedermeyer/q-and-a/issues/10)) ([5f0239a](https://github.com/bniedermeyer/q-and-a/commit/5f0239a084cd30f0428e9187f61f3af3d15d83a4)), closes [#9](https://github.com/bniedermeyer/q-and-a/issues/9)
+
 ## [1.1.1](https://github.com/bniedermeyer/q-and-a/compare/v1.1.0...v1.1.1) (2020-11-23)
 
 
