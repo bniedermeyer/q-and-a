@@ -34,8 +34,7 @@ Before you ask a question, it is best to search for existing [Issues](https://gi
 
 If you then still feel the need to ask a question and need clarification, we recommend the following:
 
-- Open an [Issue](https://github.com/bniedermeyer/q-and-a/issues/new).
-- Label the issue as a `Question`.
+- Ask your question on the [discussion board](https://github.com/bniedermeyer/q-and-a/discussions)  
 - Provide as much context as you can about what you're running into.
 - Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
 
