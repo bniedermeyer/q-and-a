@@ -120,6 +120,19 @@ You can also use a Firebase Realtime Database to store your questions in and hav
 </q-and-a>
 ```
 
+## Styling
+
+You can update colors the component uses with the `primary-color` and `secondary-color` props.
+`primary-color` sets the color for the button border and `secondary-color` is used for question and header text color.
+
+If you want more granular control over styles, we've exposed a number of sections via [css shadow parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/)
+
+- `form`
+- `question-textarea`
+- `submit-button`
+- `confirmation-message`
+- `error-message`
+
 ## Development
 
 ### Stencil
