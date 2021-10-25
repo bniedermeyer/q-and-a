@@ -5,10 +5,10 @@ exports[`q-and-a renders 1`] = `
   <mock:shadow-root>
     <qa-question-form>
       <mock:shadow-root>
-        <form id="qa-question-form">
-          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+        <form id="qa-question-form" part="form">
+          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" part="question-textarea" rows="3"></textarea>
           </div>
-          <button id="qa-submit-question-btn" type="submit" style="color: #007745 ; border: 3px solid #007745 ;">
+          <button id="qa-submit-question-btn" part="submit-button" type="submit" style="color: #007745 ; border: 3px solid #007745 ;">
             Ask Question
           </button>
         </form>
@@ -23,10 +23,10 @@ exports[`q-and-a should set the state according to the properties supplied 1`] =
   <mock:shadow-root>
     <qa-question-form>
       <mock:shadow-root>
-        <form id="qa-question-form">
-          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" rows="3"></textarea>
+        <form id="qa-question-form" part="form">
+          <div><textarea aria-label="Submit your question here" cols="30" id="question" name="question" part="question-textarea" rows="3"></textarea>
           </div>
-          <button id="qa-submit-question-btn" type="submit" style="color: #585859; border: 3px solid #585859;">
+          <button id="qa-submit-question-btn" part="submit-button" type="submit" style="color: #585859; border: 3px solid #585859;">
             Ask Question
           </button>
         </form>

@@ -49,20 +49,29 @@ export class QaQuestionForm {
 
   render() {
     return (
-      <form id="qa-question-form" onSubmit={e => this.handleSubmit(e)}>
+      <form id="qa-question-form" onSubmit={e => this.handleSubmit(e)} part="form">
         <div>
-          <textarea name="question" id="question" cols={30} rows={3} value={this.question} onChange={this.handleQuestionChange} aria-label="Submit your question here"></textarea>
+          <textarea
+            name="question"
+            id="question"
+            cols={30}
+            rows={3}
+            value={this.question}
+            onChange={this.handleQuestionChange}
+            aria-label="Submit your question here"
+            part="question-textarea"
+          ></textarea>
         </div>
-        <button type="submit" id="qa-submit-question-btn" style={{ color: state.primaryColor, border: `3px solid ${state.primaryColor}` }}>
+        <button type="submit" id="qa-submit-question-btn" style={{ color: state.primaryColor, border: `3px solid ${state.primaryColor}` }} part="submit-button">
           Ask Question
         </button>
         {this.displayConfirmation ? (
-          <span class="qa-post-submit-message" id="qa-question-confirm" style={{ color: state.secondaryColor }}>
+          <span class="qa-post-submit-message" id="qa-question-confirm" style={{ color: state.secondaryColor }} part="confirmation-message">
             Question Asked!
           </span>
         ) : null}
         {this.error ? (
-          <span class="qa-post-submit-message" id="qa-question-error">
+          <span class="qa-post-submit-message" id="qa-question-error" part="error-message">
             {this.error}
           </span>
         ) : null}

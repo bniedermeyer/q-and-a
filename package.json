@@ -35,8 +35,9 @@
     "question and answer"
   ],
   "dependencies": {
-    "@stencil/core": "^2.3.0",
-    "@stencil/store": "^1.3.0"
+    "@stencil/core": "2.9.0",
+    "@stencil/store": "1.5.0",
+    "firebase": "^9.1.3"
   },
   "license": "MIT",
   "devDependencies": {

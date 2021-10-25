@@ -3,6 +3,7 @@ import { QuestionList } from '../QuestionList/QuestionList';
 import { fetchQuestions } from '../../utils/data-fetching-utils';
 import { continuousPromise } from '../../utils/utils';
 import state from '../../store';
+import { FirebaseService } from '../../utils/firebase.service';
 
 @Component({
   tag: 'q-and-a',
@@ -10,6 +11,18 @@ import state from '../../store';
   shadow: true,
 })
 export class QAndA {
+  /**
+   * Whether to use REST polling or Firebase
+   */
+  @Prop() useFirebase: boolean = false;
+  /**
+   * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+   */
+  @Prop() firebaseDb: string;
+  /**
+   * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+   */
+  @Prop() firebaseToken: string;
   /**
    * The endpoint that questions/upvotes will be posted to.
    */
@@ -42,6 +55,7 @@ export class QAndA {
    * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
    */
   @Prop() pollingInterval: number = 10000;
+  private firebaseService: FirebaseService;
 
   connectedCallback() {
     if (this.askEndpoint) {
@@ -65,7 +79,16 @@ export class QAndA {
     if (this.secondaryColor) {
       state.secondaryColor = this.secondaryColor;
     }
-    continuousPromise(fetchQuestions, this.pollingInterval);
+    if (this.useFirebase) {
+      if (!this.firebaseDb) {
+        throw new Error('Please supply a value for firebaseURL or set useFirebase to false');
+      } else {
+        this.firebaseService = new FirebaseService(this.firebaseDb, this.firebaseToken, Boolean(this.firebaseToken));
+        this.firebaseService.subscribeToQuestionUpdates();
+      }
+    } else {
+      continuousPromise(fetchQuestions, this.pollingInterval);
+    }
   }
 
   @Watch('correlationId')
@@ -73,6 +96,10 @@ export class QAndA {
     console.log(`Q&A Correlation ID was updated from ${oldId} to ${newId}`);
     // the store takes care of comparing new state values to prevent unnecessary rendering.
     state.correlationId = newId;
+    if (this.useFirebase) {
+      this.firebaseService.unsubscribeDb();
+      this.firebaseService.subscribeToQuestionUpdates();
+    }
   }
 
   render() {

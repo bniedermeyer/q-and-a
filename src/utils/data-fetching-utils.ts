@@ -4,6 +4,7 @@ import state from '../store';
 interface IncrementRequest {
   key: string;
   userId?: string;
+  correlationId?: string;
 }
 
 /**
@@ -42,6 +43,10 @@ export async function incrementQuestionCount(key: string): Promise<void> {
   };
   if (state.userId) {
     request.userId = state.userId;
+  }
+
+  if (state.correlationId) {
+    request.correlationId = state.correlationId;
   }
 
   const settings = {
