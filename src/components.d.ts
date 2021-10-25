@@ -16,6 +16,14 @@ export namespace Components {
      */
     correlationId: string;
     /**
+     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     */
+    firebaseDb: string;
+    /**
+     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     */
+    firebaseToken: string;
+    /**
      * The endpoint to post increment commands to.
      */
     incrementEndpoint: string;
@@ -35,6 +43,10 @@ export namespace Components {
      * Secondary color. Used for question and header text color.
      */
     secondaryColor: string;
+    /**
+     * Whether to use REST polling or Firebase
+     */
+    useFirebase: boolean;
     /**
      * The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.
      */
@@ -69,6 +81,14 @@ declare namespace LocalJSX {
      */
     correlationId?: string;
     /**
+     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     */
+    firebaseDb?: string;
+    /**
+     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     */
+    firebaseToken?: string;
+    /**
      * The endpoint to post increment commands to.
      */
     incrementEndpoint?: string;
@@ -88,6 +108,10 @@ declare namespace LocalJSX {
      * Secondary color. Used for question and header text color.
      */
     secondaryColor?: string;
+    /**
+     * Whether to use REST polling or Firebase
+     */
+    useFirebase?: boolean;
     /**
      * The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.
      */

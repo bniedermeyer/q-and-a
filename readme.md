@@ -73,23 +73,23 @@ The component will fetch a list of questions asked from the backend at a configu
     /**
      * The question the user asked. Must be present on all questions retrieved from the server.
      */
-    "question": "What kind of problem is your favorite to solve?",
+    question: 'What kind of problem is your favorite to solve?',
     /**
      * Unique question identifier. Must be present on all questions retrieved from the server.
      */
-    "key": "question2",
+    key: 'question2',
     /**
      * Count of times the question has been asked and upvoted by the other users. Must be present on all questions retrieved from the server
      */
-    "count": "4",
+    count: '4',
     /**
      * Optional user identifier, if configured for the component
      */
-    "userId": "user-4",
+    userId: 'user-4',
     /**
      * Optional correlation id, if configured for the component
      */
-    "correlationId": "keynote-talk"
+    correlationId: 'keynote-talk',
   },
 ];
 ```
@@ -101,9 +101,24 @@ When a user clicks on a `+1` button for a question, they are saying "I also want
 ```js
 {
   "key": "question1",
-  "userId": "user-4"
+  "userId": "user-4",
+  "correlationId": "talk1"
 }
-````
+```
+
+## Firebase
+
+You can also use a Firebase Realtime Database to store your questions in and have the list updated each time a question is submitted or voted for. To do so, pass the url of the realtime database to the `firebase-db` prod and set `use-firebase` to true. Note you'll still have to implement the endpoint to write data to the database.
+
+```html
+<q-and-a
+  id="qa"
+  user-id="brenden"
+  correlation-id="talk1"
+  use-firebase="true"
+  firebase-db="https://cjs21-discord-mirror-default-rtdb.firebaseio.com"
+</q-and-a>
+```
 
 ## Development
 
