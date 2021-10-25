@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/bniedermeyer/q-and-a/compare/v1.1.2...v1.2.0) (2021-10-25)
+
+
+### Features
+
+* add support for firebase ([df7fe99](https://github.com/bniedermeyer/q-and-a/commit/df7fe99dd80b9ce8bc2c29f5edb483331d172e76))
+
 ## [1.1.2](https://github.com/bniedermeyer/q-and-a/compare/v1.1.1...v1.1.2) (2020-11-24)
 
 

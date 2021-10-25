@@ -5,6 +5,17 @@
 <!-- Auto Generated Below -->
 
 
+## Shadow Parts
+
+| Part                     | Description |
+| ------------------------ | ----------- |
+| `"confirmation-message"` |             |
+| `"error-message"`        |             |
+| `"form"`                 |             |
+| `"question-textarea"`    |             |
+| `"submit-button"`        |             |
+
+
 ## Dependencies
 
 ### Used by
