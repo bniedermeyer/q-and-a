@@ -1,6 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-
 exports[`qa-question-list renders all of the questions 1`] = `
 Object {
   "$attrs$": Object {
@@ -8,6 +7,7 @@ Object {
     "style": Object {
       "listStyle": "none",
       "marginTop": "0",
+      "overflowY": "scroll",
       "padding": "3px",
       "paddingLeft": "0",
     },

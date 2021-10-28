@@ -12,6 +12,14 @@ import { FirebaseService } from '../../utils/firebase.service';
 })
 export class QAndA {
   /**
+   * Text to display if `placeholder` = true
+   */
+  @Prop() placeholderText: string = 'Q&A will open shortly';
+  /**
+   * Controls whether placholder text is displayed.
+   */
+  @Prop() placeholder: boolean = false;
+  /**
    * Whether to use REST polling or Firebase
    */
   @Prop() useFirebase: boolean = false;
@@ -103,6 +111,16 @@ export class QAndA {
   }
 
   render() {
+    if (this.placeholder) {
+      return (
+        <Host>
+          <h2 part="placeholder-text" id="placeholder-text" style={{ margin: '5px', color: state.secondaryColor, textAlign: 'center' }}>
+            {this.placeholderText}
+          </h2>
+        </Host>
+      );
+    }
+
     return (
       <Host>
         <qa-question-form></qa-question-form>

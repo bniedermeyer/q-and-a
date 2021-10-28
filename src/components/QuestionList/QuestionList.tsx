@@ -33,7 +33,7 @@ export const QuestionList: FunctionalComponent<QuestionListProps> = ({ questions
   ));
 
   return (
-    <ul id="questions" style={{ listStyle: 'none', paddingLeft: '0', padding: '3px', marginTop: '0' }}>
+    <ul id="questions" style={{ listStyle: 'none', paddingLeft: '0', padding: '3px', marginTop: '0', overflowY: 'scroll' }}>
       {questionsList}
     </ul>
   );
