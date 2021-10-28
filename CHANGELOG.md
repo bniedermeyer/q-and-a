@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/bniedermeyer/q-and-a/compare/v1.2.0...v1.3.0) (2021-10-28)
+
+
+### Features
+
+* add placeholder ([#13](https://github.com/bniedermeyer/q-and-a/issues/13)) ([481abf0](https://github.com/bniedermeyer/q-and-a/commit/481abf083248479374295fe974968d4b9e343470))
+
 # [1.2.0](https://github.com/bniedermeyer/q-and-a/compare/v1.1.2...v1.2.0) (2021-10-25)
 
 
