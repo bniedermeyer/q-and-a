@@ -16,17 +16,41 @@ export namespace Components {
      */
     correlationId: string;
     /**
+     * Use to customize the name of your firebase callable function to submit questions. Default is `askQuestion`
+     */
+    firebaseAskFn: string;
+    /**
+     * The auth domain for your firebase project. Needed for Safari compatibility. You probably don't need to adjust this unless you have issues with your app's authentication in general.
+     */
+    firebaseAuthDomain: string;
+    /**
      * URL for the Firebase Realtime Database. Required if `useFirebase` = true
      */
     firebaseDb: string;
     /**
-     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     * Use to customize the name of your firebase callable function to increment question counts. Default is `incrementQuestion`
+     */
+    firebaseIncrementFn: string;
+    /**
+     * The project ID for your firebase project. Required if `useFirebase` = true
+     */
+    firebaseProjectId: string;
+    /**
+     * Web API Key for your Firebase project. Required if `useFirebase` = true
      */
     firebaseToken: string;
     /**
      * The endpoint to post increment commands to.
      */
     incrementEndpoint: string;
+    /**
+     * Controls whether placholder text is displayed.
+     */
+    placeholder: boolean;
+    /**
+     * Text to display if `placeholder` = true
+     */
+    placeholderText: string;
     /**
      * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
      */
@@ -81,17 +105,41 @@ declare namespace LocalJSX {
      */
     correlationId?: string;
     /**
+     * Use to customize the name of your firebase callable function to submit questions. Default is `askQuestion`
+     */
+    firebaseAskFn?: string;
+    /**
+     * The auth domain for your firebase project. Needed for Safari compatibility. You probably don't need to adjust this unless you have issues with your app's authentication in general.
+     */
+    firebaseAuthDomain?: string;
+    /**
      * URL for the Firebase Realtime Database. Required if `useFirebase` = true
      */
     firebaseDb?: string;
     /**
-     * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+     * Use to customize the name of your firebase callable function to increment question counts. Default is `incrementQuestion`
+     */
+    firebaseIncrementFn?: string;
+    /**
+     * The project ID for your firebase project. Required if `useFirebase` = true
+     */
+    firebaseProjectId?: string;
+    /**
+     * Web API Key for your Firebase project. Required if `useFirebase` = true
      */
     firebaseToken?: string;
     /**
      * The endpoint to post increment commands to.
      */
     incrementEndpoint?: string;
+    /**
+     * Controls whether placholder text is displayed.
+     */
+    placeholder?: boolean;
+    /**
+     * Text to display if `placeholder` = true
+     */
+    placeholderText?: string;
     /**
      * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
      */

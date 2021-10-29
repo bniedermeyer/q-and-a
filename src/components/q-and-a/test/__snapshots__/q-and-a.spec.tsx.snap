@@ -39,8 +39,10 @@ exports[`q-and-a should set the state according to the properties supplied 1`] =
 exports[`q-and-a should set the state according to the properties supplied 2`] = `
 Object {
   "askEndpoint": "/test-endpoint",
+  "askFunction": "askQuestion",
   "correlationId": "corr123",
   "incrementEndpoint": "/ask",
+  "incrementFunction": "incrementQuestion",
   "primaryColor": "#585859",
   "questions": Array [],
   "retrieveEndpoint": "/test-retrieve",
@@ -52,8 +54,10 @@ Object {
 exports[`q-and-a should update the correlation id if it changes 1`] = `
 Object {
   "askEndpoint": "/ask",
+  "askFunction": "askQuestion",
   "correlationId": "",
   "incrementEndpoint": "/ask",
+  "incrementFunction": "incrementQuestion",
   "primaryColor": "#007745 ",
   "questions": Array [],
   "retrieveEndpoint": "/questions",
@@ -65,8 +69,10 @@ Object {
 exports[`q-and-a should update the correlation id if it changes 2`] = `
 Object {
   "askEndpoint": "/ask",
+  "askFunction": "askQuestion",
   "correlationId": "corr1234",
   "incrementEndpoint": "/ask",
+  "incrementFunction": "incrementQuestion",
   "primaryColor": "#007745 ",
   "questions": Array [],
   "retrieveEndpoint": "/questions",

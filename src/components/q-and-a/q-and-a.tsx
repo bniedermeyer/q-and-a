@@ -1,9 +1,8 @@
 import { Component, Prop, Watch, Host, h } from '@stencil/core';
 import { QuestionList } from '../QuestionList/QuestionList';
-import { fetchQuestions } from '../../utils/data-fetching-utils';
 import { continuousPromise } from '../../utils/utils';
+import dataService from '../../utils/data.service';
 import state from '../../store';
-import { FirebaseService } from '../../utils/firebase.service';
 
 @Component({
   tag: 'q-and-a',
@@ -28,9 +27,25 @@ export class QAndA {
    */
   @Prop() firebaseDb: string;
   /**
-   * URL for the Firebase Realtime Database. Required if `useFirebase` = true
+   * Web API Key for your Firebase project. Required if `useFirebase` = true
    */
   @Prop() firebaseToken: string;
+  /**
+   * The project ID for your firebase project. Required if `useFirebase` = true
+   */
+  @Prop() firebaseProjectId: string;
+  /**
+   * The auth domain for your firebase project. Needed for Safari compatibility. You probably don't need to adjust this unless you have issues with your app's authentication in general.
+   */
+  @Prop() firebaseAuthDomain: string = 'noop';
+  /**
+   * Use to customize the name of your firebase callable function to submit questions. Default is `askQuestion`
+   */
+  @Prop() firebaseAskFn: string = 'askQuestion';
+  /**
+   * Use to customize the name of your firebase callable function to increment question counts. Default is `incrementQuestion`
+   */
+  @Prop() firebaseIncrementFn: string = 'incrementQuestion';
   /**
    * The endpoint that questions/upvotes will be posted to.
    */
@@ -63,11 +78,16 @@ export class QAndA {
    * The interval in which the questions should be fetched in ms. Defaults to 10000ms (10 seconds).
    */
   @Prop() pollingInterval: number = 10000;
-  private firebaseService: FirebaseService;
 
   connectedCallback() {
     if (this.askEndpoint) {
       state.askEndpoint = this.askEndpoint;
+    }
+    if (this.firebaseAskFn) {
+      state.askFunction = this.firebaseAskFn;
+    }
+    if (this.firebaseIncrementFn) {
+      state.incrementFunction = this.firebaseIncrementFn;
     }
     if (this.retrieveEndpoint) {
       state.retrieveEndpoint = this.retrieveEndpoint;
@@ -88,14 +108,14 @@ export class QAndA {
       state.secondaryColor = this.secondaryColor;
     }
     if (this.useFirebase) {
-      if (!this.firebaseDb) {
-        throw new Error('Please supply a value for firebaseURL or set useFirebase to false');
+      if (!this.firebaseDb || !this.firebaseToken || !this.firebaseProjectId) {
+        throw new Error('Missing required firebase values. Please supply firebase-db, firebase-token and firebase-project-id or set use-firebase to false');
       } else {
-        this.firebaseService = new FirebaseService(this.firebaseDb, this.firebaseToken, Boolean(this.firebaseToken));
-        this.firebaseService.subscribeToQuestionUpdates();
+        dataService.initFirebase(this.firebaseDb, this.firebaseToken, this.firebaseProjectId, this.firebaseAuthDomain);
+        dataService.subscribeToQuestions();
       }
     } else {
-      continuousPromise(fetchQuestions, this.pollingInterval);
+      continuousPromise(dataService.fetchQuestions, this.pollingInterval);
     }
   }
 
@@ -105,8 +125,8 @@ export class QAndA {
     // the store takes care of comparing new state values to prevent unnecessary rendering.
     state.correlationId = newId;
     if (this.useFirebase) {
-      this.firebaseService.unsubscribeDb();
-      this.firebaseService.subscribeToQuestionUpdates();
+      dataService.unsubscribeToQuestions();
+      dataService.subscribeToQuestions();
     }
   }
 

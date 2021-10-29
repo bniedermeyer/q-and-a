@@ -23,3 +23,9 @@ export interface AskedQuestion extends Question {
    */
   key: string;
 }
+
+export interface IncrementRequest {
+  key: string;
+  userId?: string;
+  correlationId?: string;
+}

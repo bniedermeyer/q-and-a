@@ -1,11 +1,5 @@
-import { AskedQuestion, Question } from '../models/Question';
+import { AskedQuestion, Question, IncrementRequest } from '../models/Question';
 import state from '../store';
-
-interface IncrementRequest {
-  key: string;
-  userId?: string;
-  correlationId?: string;
-}
 
 /**
  * Posts the question asked by the user to the backend.
