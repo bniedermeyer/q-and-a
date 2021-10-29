@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from '@stencil/core';
 import { AskedQuestion } from '../../models/Question';
-import { incrementQuestionCount } from '../../utils/data-fetching-utils';
+import dataService from '../../utils/data.service';
 import state from '../../store';
 
 interface QuestionListProps {
@@ -22,7 +22,7 @@ export const QuestionList: FunctionalComponent<QuestionListProps> = ({ questions
       <button
         type="button"
         class="qa-inc-button"
-        onClick={() => incrementQuestionCount(question.key)}
+        onClick={() => dataService.incrementQuestion(question.key)}
         aria-label="Also ask this question"
         style={{ marginRight: '5px', border: `3px solid ${state.primaryColor}`, fontWeight: 'bold', backgroundColor: 'transparent' }}
       >

@@ -9,8 +9,10 @@ import { createStore } from '@stencil/store';
 
 const { state, reset, dispose } = createStore({
   askEndpoint: '',
+  askFunction: '',
   retrieveEndpoint: '',
   incrementEndpoint: '',
+  incrementFunction: '',
   userId: '',
   correlationId: '',
   primaryColor: '',

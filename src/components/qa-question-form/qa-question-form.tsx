@@ -1,5 +1,5 @@
 import { Component, State, h } from '@stencil/core';
-import { askQuestion } from '../../utils/data-fetching-utils';
+import dataService from '../../utils/data.service';
 import state from '../../store';
 
 @Component({
@@ -29,7 +29,7 @@ export class QaQuestionForm {
       return;
     }
     try {
-      await askQuestion(this.question);
+      await dataService.askQuestion(this.question);
       this.displayConfirmation = true;
     } catch (error) {
       this.error = error.message;

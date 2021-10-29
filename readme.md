@@ -108,17 +108,33 @@ When a user clicks on a `+1` button for a question, they are saying "I also want
 
 ## Firebase
 
-You can also use a Firebase Realtime Database to store your questions in and have the list updated each time a question is submitted or voted for. To do so, pass the url of the realtime database to the `firebase-db` prod and set `use-firebase` to true. Note you'll still have to implement the endpoint to write data to the database.
+You can also use a Firebase Realtime Database and Callable Functions to store your questions in and have the list updated each time a question is submitted or voted for. To do so, pass the url of the realtime database to the set `use-firebase` to true and provide the additionaly required information.
+
+- `firebase-db` - URL for the Firebase Realtime Database.
+- `firebase-token` - The web api key for your project.
+- `firebase-project-id` - The project ID for your firebase project.
+
+By default the component is expecting two [callable functions](https://firebase.google.com/docs/functions/callable) to exist to handle asking a question and handling upvoting of questions. By default it is expected to be called `askQuestion` and `incrementQuestion` respectively. You can set different values for these function names by setting a value in `firebase-ask-fn` or `firebase-increment-fn`.
+
+**Example**
 
 ```html
 <q-and-a
   id="qa"
-  user-id="brenden"
+  user-id="user-1"
   correlation-id="talk1"
   use-firebase="true"
-  firebase-db="https://cjs21-discord-mirror-default-rtdb.firebaseio.com"
+  firebase-token="<your web api token>"
+  firebase-db="<your database url>"
+  firebase-project-id="<your project id>"
+  firebase-ask-fn="callableAsk"
+  firebase-increment-fn="callableIncrement"
 </q-and-a>
 ```
+
+> You'll still have to implement the endpoint to write data to the database.
+
+> Note: per [Firebase documentation](https://firebase.google.com/docs/projects/api-keys), it's totally fine to use the Web API Key in a public setting. This only identifies your Firebase app and doesn't grant any additional permissions.
 
 ## Styling
 
@@ -132,6 +148,7 @@ If you want more granular control over styles, we've exposed a number of section
 - `submit-button`
 - `confirmation-message`
 - `error-message`
+- `placeholder-text`
 
 ## Development
 
