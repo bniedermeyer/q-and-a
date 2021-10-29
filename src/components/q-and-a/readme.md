@@ -4,6 +4,7 @@ Please note that while the component does a great job submitting and fetching qu
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property              | Attribute               | Description                                                                                                                                                                                                                                                                                                                                                                                                                     | Type      | Default                   |
@@ -26,11 +27,13 @@ Please note that while the component does a great job submitting and fetching qu
 | `useFirebase`         | `use-firebase`          | Whether to use REST polling or Firebase                                                                                                                                                                                                                                                                                                                                                                                         | `boolean` | `false`                   |
 | `userId`              | `user-id`               | The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.                                                                                                                                                                                                                                                                                                   | `string`  | `undefined`               |
 
+
 ## Shadow Parts
 
 | Part                 | Description |
 | -------------------- | ----------- |
 | `"placeholder-text"` |             |
+
 
 ## Dependencies
 
@@ -39,13 +42,12 @@ Please note that while the component does a great job submitting and fetching qu
 - [qa-question-form](../qa-question-form)
 
 ### Graph
-
 ```mermaid
 graph TD;
   q-and-a --> qa-question-form
   style q-and-a fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

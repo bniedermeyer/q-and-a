@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/bniedermeyer/q-and-a/compare/v1.3.0...v2.0.0) (2021-10-29)
+
+
+### Features
+
+* refactor data service for callable functions and authentication  ([c4d040f](https://github.com/bniedermeyer/q-and-a/commit/c4d040f8851de54234a4887b46e50867a91d0a35))
+
+
+### BREAKING CHANGES
+
+* This component now requires `firebase-project-id` and `firebase-token` in order to
+work with Firebase.
+
 # [1.3.0](https://github.com/bniedermeyer/q-and-a/compare/v1.2.0...v1.3.0) (2021-10-28)
 
 
