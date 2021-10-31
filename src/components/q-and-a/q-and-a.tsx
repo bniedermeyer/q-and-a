@@ -131,15 +131,15 @@ export class QAndA {
   }
 
   render() {
-    if (this.placeholder) {
-      return (
-        <Host>
-          <h2 part="placeholder-text" id="placeholder-text" style={{ margin: '5px', color: state.secondaryColor, textAlign: 'center' }}>
-            {this.placeholderText}
-          </h2>
-        </Host>
-      );
-    }
+    // if (this.placeholder) {
+    //   return (
+    //     <Host>
+    //       <h2 part="placeholder-text" id="placeholder-text" style={{ margin: '5px', color: state.secondaryColor, textAlign: 'center' }}>
+    //         {this.placeholderText}
+    //       </h2>
+    //     </Host>
+    //   );
+    // }
 
     return (
       <Host>
