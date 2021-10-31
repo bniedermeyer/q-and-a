@@ -28,13 +28,6 @@ Please note that while the component does a great job submitting and fetching qu
 | `userId`              | `user-id`               | The optional id of the user asking a question. Will be sent with the question if present. Cannot be changed once initialized.                                                                                                                                                                                                                                                                                                   | `string`  | `undefined`               |
 
 
-## Shadow Parts
-
-| Part                 | Description |
-| -------------------- | ----------- |
-| `"placeholder-text"` |             |
-
-
 ## Dependencies
 
 ### Depends on

@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/bniedermeyer/q-and-a/compare/v2.0.1...v2.0.2) (2021-10-31)
+
+
+### Bug Fixes
+
+* temporarily disable placeholder ([fcb9faf](https://github.com/bniedermeyer/q-and-a/commit/fcb9faf0445d31966ac3e0c79db8ffa8d29b3fce))
+
 ## [2.0.1](https://github.com/bniedermeyer/q-and-a/compare/v2.0.0...v2.0.1) (2021-10-31)
 
 
