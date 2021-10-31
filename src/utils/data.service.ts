@@ -4,10 +4,6 @@ import { FirebaseService } from './firebase.service';
 class DataService {
   private fbService: FirebaseService;
 
-  constructor() {
-    console.log('Data Service Initialized');
-  }
-
   public initFirebase(databaseURL: string, apiKey: string, projectId: string, authDomain: string): void {
     this.fbService = new FirebaseService(databaseURL, apiKey, projectId, authDomain);
   }
