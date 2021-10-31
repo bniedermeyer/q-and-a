@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/bniedermeyer/q-and-a/compare/v2.0.0...v2.0.1) (2021-10-31)
+
+
+### Bug Fixes
+
+* remove unnecessary console log ([4377ea9](https://github.com/bniedermeyer/q-and-a/commit/4377ea9a8c5871acf6fd7f55672c206a71c912dc))
+
 # [2.0.0](https://github.com/bniedermeyer/q-and-a/compare/v1.3.0...v2.0.0) (2021-10-29)
 
 
