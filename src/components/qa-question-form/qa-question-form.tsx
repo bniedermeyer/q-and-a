@@ -20,6 +20,10 @@ export class QaQuestionForm {
    * Error messages that are created while submitting a question
    */
   @State() error: string;
+  /**
+   * Whether or not to display the loading indicator
+   */
+  @State() loading: boolean = false;
 
   async handleSubmit(e: Event): Promise<void> {
     e.preventDefault();
@@ -28,10 +32,13 @@ export class QaQuestionForm {
       this.displayConfirmation = false;
       return;
     }
+    this.loading = true;
     try {
       await dataService.askQuestion(this.question);
+      this.loading = false;
       this.displayConfirmation = true;
     } catch (error) {
+      this.loading = false;
       this.error = error.message;
     }
     this.question = '';
@@ -65,16 +72,21 @@ export class QaQuestionForm {
         <button type="submit" id="qa-submit-question-btn" style={{ color: state.primaryColor, border: `3px solid ${state.primaryColor}` }} part="submit-button">
           Ask Question
         </button>
-        {this.displayConfirmation ? (
+        {this.loading && (
+          <span class="qa-post-submit-message" id="qa-question-loading" style={{ color: state.secondaryColor }} part="loading-message">
+            Asking...
+          </span>
+        )}
+        {this.displayConfirmation && (
           <span class="qa-post-submit-message" id="qa-question-confirm" style={{ color: state.secondaryColor }} part="confirmation-message">
             Question Asked!
           </span>
-        ) : null}
-        {this.error ? (
+        )}
+        {this.error && (
           <span class="qa-post-submit-message" id="qa-question-error" part="error-message">
             {this.error}
           </span>
-        ) : null}
+        )}
       </form>
     );
   }

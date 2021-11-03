@@ -149,6 +149,7 @@ If you want more granular control over styles, we've exposed a number of section
 - `confirmation-message`
 - `error-message`
 - `placeholder-text`
+- `loading-message`
 
 ## Development
 
