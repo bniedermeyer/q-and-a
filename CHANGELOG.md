@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/bniedermeyer/q-and-a/compare/v2.0.3...v2.0.4) (2021-11-03)
+
+
+### Bug Fixes
+
+* make interactions snappier ([4157833](https://github.com/bniedermeyer/q-and-a/commit/41578333bb19e2210837520553d2a4b4727f3e03))
+
 ## [2.0.3](https://github.com/bniedermeyer/q-and-a/compare/v2.0.2...v2.0.3) (2021-11-02)
 
 

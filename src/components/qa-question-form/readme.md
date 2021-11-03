@@ -12,6 +12,7 @@
 | `"confirmation-message"` |             |
 | `"error-message"`        |             |
 | `"form"`                 |             |
+| `"loading-message"`      |             |
 | `"question-textarea"`    |             |
 | `"submit-button"`        |             |
 
